@@ -17,19 +17,29 @@
 //   })
 
 
-// const tabLinksContainer = document.getElementById('tab-links');
 
-const url = 'https://knassbani2.execute-api.us-east-2.amazonaws.com/events/category';
 
-fetch(url, {
-  headers: {
-    'Access-Control-Allow-Origin': 'http://127.0.0.1:5500' // Reemplaza con tu origen específico
-  }
-})
-  .then(response => response.json())
-  .then(data => {
-    console.log(data);
-  })
-  .catch(error => {
-    console.error(error);
+
+
+var container = document.createElement('div');
+container.id = 'tab-container';
+document.body.appendChild(container);
+
+var categories = ['Music', 'Sports', 'Business', 'Food', 'Art'];
+
+categories.forEach(function(category) {
+  var button = document.createElement('button');
+  button.innerHTML = category;
+  button.addEventListener('click', function() {
+    console.log('Categoría seleccionada: ' + category);
   });
+  container.appendChild(button);
+});
+
+container.classList.add('flex-container');
+container.style.marginTop = '20px';
+
+var buttons = container.getElementsByTagName('button');
+for (var i = 0; i < buttons.length; i++) {
+  buttons[i].classList.add('tab-button');
+}

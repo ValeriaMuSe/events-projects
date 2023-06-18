@@ -1,3 +1,45 @@
 body {
   font-family: 'Poppins', sans-serif;
 }
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  background-color: black;
+  min-height: 100px;
+  align-items: center;
+}
+
+
+.tab-button {
+  margin: 0 10px;
+  padding: 5px 10px;
+  width: 100px;
+  height: 50px;
+}
+
+#event-grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 10px;
+  margin-top: 20px;
+}
+
+.event-item {
+  background-color: #f0f0f0;
+  padding: 10px;
+  text-align: center;
+}
+
+.event-item img {
+  max-width: 100%;
+  height: auto;
+}
+
+.event-item h3 {
+  margin-top: 10px;
+}
+
+.event-item p {
+  margin: 5px 0;
+}
