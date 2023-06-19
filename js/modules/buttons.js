@@ -70,7 +70,6 @@ function initializeButtons() {
   });
 
   container.classList.add('flex-container');
-  container.style.marginTop = '20px';
 
   var buttons = container.getElementsByTagName('button');
   for (var i = 0; i < buttons.length; i++) {
