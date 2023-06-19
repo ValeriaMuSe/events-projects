@@ -18,12 +18,12 @@ body {
   height: 50px;
 }
 
-#event-grid-container {
+/* #event-grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-gap: 10px;
   margin-top: 20px;
-}
+} */
 
 .event-item {
   background-color: #f0f0f0;
@@ -42,4 +42,17 @@ body {
 
 .event-item p {
   margin: 5px 0;
+}
+
+.event {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 20px;
 }
