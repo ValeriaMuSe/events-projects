@@ -1,5 +1,5 @@
 
-import { eventApi, formatDate } from './api.js';
+import { eventApi, formatDate, formatPrice } from './api.js';
 
 function renderEvents(eventsData) {
   var gridContainer = document.getElementById('grid-container');
@@ -29,12 +29,8 @@ function renderEvents(eventsData) {
     dateElement.textContent = formatDate(event.date);
     eventElement.appendChild(dateElement);
 
-    var locationElement = document.createElement('p');
-    locationElement.textContent = event.location;
-    eventElement.appendChild(locationElement);
-
     var priceElement = document.createElement('p');
-    priceElement.textContent = event.price === 0 ? 'Free' : `$${event.price.toFixed(2)}`;
+    priceElement.textContent = formatPrice(event.price);
     eventElement.appendChild(priceElement);
 
     gridContainer.appendChild(eventElement);
@@ -78,4 +74,3 @@ function initializeButtons() {
 }
 
 export { initializeButtons };
-
