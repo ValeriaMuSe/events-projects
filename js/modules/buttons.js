@@ -1,5 +1,14 @@
 
-import { eventApi, formatDate, formatPrice } from './api.js';
+// import { eventApi, formatDate, formatPrice } from './api.js';
+
+
+import formatDate from './dateFormatter.js';
+import formatPrice from './priceFormatter.js';
+import { EventAPIProxy } from './eventAPI.js';
+
+const eventApi = new EventAPIProxy();
+
+export { eventApi, formatDate, formatPrice };
 
 function renderEvents(eventsData) {
   var gridContainer = document.getElementById('grid-container');
@@ -30,13 +39,7 @@ function renderEvents(eventsData) {
     dateElement.textContent = formatDate(event.date);
     eventElement.appendChild(dateElement);
 
-<<<<<<< Updated upstream
-=======
-    // var locationElement = document.createElement('p');
-    // locationElement.textContent = event.location;
-    // eventElement.appendChild(locationElement);
 
->>>>>>> Stashed changes
     var priceElement = document.createElement('p');
     priceElement.textContent = formatPrice(event.price);
     eventElement.appendChild(priceElement);
@@ -82,3 +85,6 @@ function initializeButtons() {
 }
 
 export { initializeButtons };
+
+
+
