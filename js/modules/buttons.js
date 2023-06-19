@@ -19,6 +19,7 @@ function renderEvents(eventsData) {
 
     var imageElement = document.createElement('img');
     imageElement.src = event.image;
+    imageElement.classList.add('event_image');
     eventElement.appendChild(imageElement);
 
     var titleElement = document.createElement('h2');
@@ -29,6 +30,13 @@ function renderEvents(eventsData) {
     dateElement.textContent = formatDate(event.date);
     eventElement.appendChild(dateElement);
 
+<<<<<<< Updated upstream
+=======
+    // var locationElement = document.createElement('p');
+    // locationElement.textContent = event.location;
+    // eventElement.appendChild(locationElement);
+
+>>>>>>> Stashed changes
     var priceElement = document.createElement('p');
     priceElement.textContent = formatPrice(event.price);
     eventElement.appendChild(priceElement);
