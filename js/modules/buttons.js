@@ -1,7 +1,4 @@
 
-// import { eventApi, formatDate, formatPrice } from './api.js';
-
-
 import formatDate from './dateFormatter.js';
 import formatPrice from './priceFormatter.js';
 import { EventAPIProxy } from './eventAPI.js';
@@ -25,6 +22,7 @@ function renderEvents(eventsData) {
         <p class="event_title">${event.title}</p>
         <p>${formatDate(event.date)}</p>
         <p>${formatPrice(event.price)}</p>
+        <p>Location: ${event.location.city}, ${event.location.state},${event.location.address} </p>
       </div>
     `)
     .join('');
@@ -46,7 +44,7 @@ function initializeButtons() {
   container.id = 'tab-container';
   document.body.appendChild(container);
   var eventscategories = ['Music', 'Sports', 'Business', 'Food', 'Art'];
-  var defaultButton = null; // Variable para almacenar el botón predeterminado
+  var defaultButton = null; 
   eventscategories.forEach(function (category) {
     var button = document.createElement('button');
     button.innerHTML = category;
@@ -55,14 +53,14 @@ function initializeButtons() {
       if (defaultButton !== null) {
         defaultButton.classList.remove('default-tab-button');
       }
-      handleClick(category.toLowerCase()); // Convertir a minúsculas para que coincida con las categorías en el API
+      handleClick(category.toLowerCase()); 
       button.classList.add('default-tab-button');
-      defaultButton = button; // Actualizar el botón predeterminado
+      defaultButton = button; 
     });
     container.appendChild(button);
     if (category === 'Music') {
       button.classList.add('default-tab-button');
-      defaultButton = button; // Establecer el botón de la categoría "Music" como predeterminado
+      defaultButton = button; 
     }
   });
   container.classList.add('flex-container');
@@ -73,6 +71,4 @@ function initializeButtons() {
   handleClick('music');
 }
 export { initializeButtons };
-
-
 
